@@ -1,0 +1,30 @@
+<html>
+    {% extends 'base.html' %}
+    {% block content %}
+
+    <h1>Student Details </h1>
+    <table>
+        <thead>
+            <th>Student Roll No</th>
+            <th>Student Name</th>
+            <th>Student class</th>
+            <th>Student Date of birth</th>
+            
+        </thead>
+        <tr>
+        {% for st in student %}
+        <td> {{st.sRollNo}}</td>
+        <td> {{st.sname}}</td>
+        <td> {{st.sclass}}</td>
+        <td> {{st.sDateofbirth}}</td>
+        
+        <td><a href="/update/{{st.id}}">Update</a><a href='/delete/{{st.id}}'>Delete</a></td>;
+        </tr>
+        {% endfor %}
+
+    </table>
+    <a href ='/create'><button type="button">Add New Student</button></a>
+    {% endblock %}
+
+    
+</html>
